@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: grabfood-flashsale-sync-service
+  cache:
+    type: caffeine
+    cache-names:
+      - flash-sale
+    caffeine:
+      spec: maximumSize=10000,expireAfterWrite=300s
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.grabfood.flashsale: DEBUG
+    org.springframework.cache: DEBUG
